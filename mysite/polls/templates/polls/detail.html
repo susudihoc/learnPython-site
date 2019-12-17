@@ -1,0 +1,19 @@
+<h1>{{ question.question_text }}</h1>
+
+{% if error_messsage %}
+
+
+<strong>{{ error_messsage }}</strong>
+
+{% endif %}
+<!--# Chúng ta tạo thẻ form và đưa url dẫn đến view vote() với tham số question.id là ID của đối tượng Choice trong CSDL, phương thức gửi lên là phương thức POST-->
+<form action="{% url 'polls:vote' question.id %}" method="post">
+    {% csrf_token %}
+<!--    Chúng ta hiển thị các radio button, mỗi radio button hiển thị một câu trả lời (Choice) cho từng Question. -->
+<!--    Các radio button sẽ được gán thuộc tính name là choice. Thuộc tính forloop.counter là số thứ tự của vòng lặp giống như khi bạn viết for(int i...) trong C++ vậy.-->
+    {% for choice in question.choice_set.all %}
+        <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}" />
+        <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label>
+    {% endfor %}
+    <input type="submit" value="Vote" />
+</form>
