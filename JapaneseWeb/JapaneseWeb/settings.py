@@ -25,7 +25,7 @@ SECRET_KEY = '&=k=#ovy=*#q9jom66dob4miw=1yhjntm4jlk2-j!wxx)#6z87'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['susudihoc.pythonanywhere.com','testserver']
 
 
 # Application definition
