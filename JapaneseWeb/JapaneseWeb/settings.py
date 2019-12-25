@@ -25,12 +25,13 @@ SECRET_KEY = '&=k=#ovy=*#q9jom66dob4miw=1yhjntm4jlk2-j!wxx)#6z87'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['susudihoc.pythonanywhere.com','testserver']
+ALLOWED_HOSTS = ['http://susudihoc.pythonanywhere.com/','testserver']
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'polls.apps.PollsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
